@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Arrowgene.KrazyRain.GameServer\Arrowgene.KrazyRain.GameServer.csproj" />
+      <ProjectReference Include="..\Arrowgene.KrazyRain.PatchServer\Arrowgene.KrazyRain.PatchServer.csproj" />
+      <ProjectReference Include="..\Arrowgene.KrazyRain.VirtualDisk\Arrowgene.KrazyRain.VirtualDisk.csproj" />
+    </ItemGroup>
+
+</Project>

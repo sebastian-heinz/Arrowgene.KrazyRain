@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrowgene.KrazyRain.Cmd", "Arrowgene.KrazyRain.Cmd\Arrowgene.KrazyRain.Cmd.csproj", "{110E4FFF-A22A-405C-8411-00E8875A4287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrowgene.KrazyRain.GameServer", "Arrowgene.KrazyRain.GameServer\Arrowgene.KrazyRain.GameServer.csproj", "{7D972808-5C7C-44EE-B993-3DE2F3A1F579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrowgene.KrazyRain.PatchServer", "Arrowgene.KrazyRain.PatchServer\Arrowgene.KrazyRain.PatchServer.csproj", "{66E2C073-52DB-452A-BB65-7E95D61BBF96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrowgene.KrazyRain.VirtualDisk", "Arrowgene.KrazyRain.VirtualDisk\Arrowgene.KrazyRain.VirtualDisk.csproj", "{2B2F0886-C282-48ED-91E0-98436CE27C0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{110E4FFF-A22A-405C-8411-00E8875A4287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110E4FFF-A22A-405C-8411-00E8875A4287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110E4FFF-A22A-405C-8411-00E8875A4287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110E4FFF-A22A-405C-8411-00E8875A4287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D972808-5C7C-44EE-B993-3DE2F3A1F579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D972808-5C7C-44EE-B993-3DE2F3A1F579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D972808-5C7C-44EE-B993-3DE2F3A1F579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D972808-5C7C-44EE-B993-3DE2F3A1F579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E2C073-52DB-452A-BB65-7E95D61BBF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E2C073-52DB-452A-BB65-7E95D61BBF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E2C073-52DB-452A-BB65-7E95D61BBF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E2C073-52DB-452A-BB65-7E95D61BBF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2F0886-C282-48ED-91E0-98436CE27C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2F0886-C282-48ED-91E0-98436CE27C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2F0886-C282-48ED-91E0-98436CE27C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2F0886-C282-48ED-91E0-98436CE27C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
