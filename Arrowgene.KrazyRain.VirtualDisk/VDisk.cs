@@ -83,7 +83,7 @@ namespace Arrowgene.KrazyRain.VirtualDisk
                 {
                     case 0:
                     {
-                        vFile.Path = $"{currentFolder.Path}/{vFile.Name}";
+                        vFile.Path = $"{currentFolder.Path}/{vFile.Name}".Trim('/');
                         break;
                     }
                     case 1:
@@ -181,7 +181,12 @@ namespace Arrowgene.KrazyRain.VirtualDisk
                         $"/{currentFolder.Name}",
                         StringComparison.InvariantCultureIgnoreCase
                     );
-                    string parentFolderPath = currentFolder.Path.Substring(0, lastIndex);
+                    string parentFolderPath = ""; // default root path
+                    if (lastIndex >= 0)
+                    {
+                        parentFolderPath = currentFolder.Path.Substring(0, lastIndex);
+                    }
+
                     bool found = false;
                     foreach (VFile parentFolder in _folderEntries.Values)
                     {
@@ -232,7 +237,7 @@ namespace Arrowgene.KrazyRain.VirtualDisk
                             else
                             {
                                 VFile parentFolder = _folderEntries[vFile.FolderOffset];
-                                currentFolder.Path = $"{parentFolder.Path}/{currentFolder.Name}";
+                                currentFolder.Path = $"{parentFolder.Path}/{currentFolder.Name}".Trim('/');
                             }
                         }
                         else
@@ -261,7 +266,7 @@ namespace Arrowgene.KrazyRain.VirtualDisk
                     }
                 }
 
-                Logger.Info(vFile.Dump());
+                //  Logger.Info(vFile.Dump());
             }
 
             Logger.Info($"Open Completed ({filePath})");
@@ -707,8 +712,20 @@ namespace Arrowgene.KrazyRain.VirtualDisk
 
             foreach (VFile vFile in _fileEntries.Values)
             {
+                if (vFile.Path.StartsWith('/'))
+                {
+                    Logger.Info($"Problematic file path assigned: {vFile.Path}, fixed");
+                    vFile.Path.Trim('/');
+                }
+
                 string filePath = Path.Combine(destinationDirectory, vFile.Path);
                 FileInfo fileInfo = new FileInfo(filePath);
+                if (!filePath.StartsWith(destinationDirectory))
+                {
+                    Logger.Info(
+                        $"Failed to build correct file path for:{vFile.Name}. (Expected:{destinationDirectory}/{vFile.Path} but will do:{fileInfo.FullName}");
+                }
+
                 DirectoryInfo directoryInfo = fileInfo.Directory;
                 if (directoryInfo == null)
                 {
