@@ -8,6 +8,7 @@ Research for reviving and server emulation of the game KrazyRain
 - [Game Assets](#game-assets)
 - [Executables](#executables)
   - [Game.exe](#gameexe)
+  - [KRAZYRAIN.exe](#krazyrainexe)
   - [KRPATCHER.exe](#krpatcherexe)
 - [Project](#project)
   - [Arrowgene.KrazyRain.Cmd](#arrowgenekrazyraincmd)
@@ -93,11 +94,11 @@ Game.exe fromlauncher test
 	ret
 ```
 
-## KRPATCHER.exe
-Game Patcher that delivers updates.
+## KRAZYRAIN.EXE
+Launcher of the Game.
 
 ### DNS Lookups
-The patcher tries to connect to the following hosts:
+The launcher tries to connect to the following hosts:
 ```
 127.0.0.1 patch.krazyrain.com
 127.0.0.1 krazyrain.com
@@ -107,12 +108,12 @@ in order to redirect the requests, modify your `hosts` file accordingly.
 
 ### Arguments
 ```
-KRPATCHER.exe fromlauncher version #32770
-KRPATCHER.exe hiderun
+KRAZYRAIN.exe fromlauncher version #32770
+KRAZYRAIN.exe hiderun
 ```
 
 ### HTTP Requests
-The Patcher will request various `.ini` files.   
+The launcher will request various `.ini` files.   
 
 some of them contain the `FileVersion`:
 ```
@@ -148,6 +149,10 @@ HTML file to displat while checking
 
 #### Launcher.snp
 HTML file to displat after check completed
+
+
+## KRPATCHER.exe
+Game Patcher that delivers updates.
 
 
 # Project
