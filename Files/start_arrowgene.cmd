@@ -1,0 +1,1 @@
+Arrowgene.Game.exe fromlauncher run Account Hash 1
