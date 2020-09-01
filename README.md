@@ -110,4 +110,46 @@ Version:
 ```
 
 # Project
+Summary of projects
+
 ## Arrowgene.KrazyRain.Cmd
+Main entry point to run individual parts.
+
+Extract specific `.SNP` file:
+`
+vdisk-extract
+D:\Games\KrazyRain\Data\DATA.SNP
+D:\Games\KrazyRain\DATA_OUT
+`
+Note: ensure `DATA_OUT` exists.   
+
+Extract all `.SNP` files in folder:
+`
+vdisk-extract-all
+D:\Games\KrazyRain\Data
+D:\Games\KrazyRain\DATA_OUT
+`
+Note: ensure `DATA_OUT` exists.   
+
+Repack a folder into an `.SNP` archive:
+`
+vdisk-archive
+D:\Games\KrazyRain\DATA_OUT
+DATA
+D:\Games\KrazyRain\DATA_OUT_SNP\DATA.SNP
+`
+Note: ensure `DATA_OUT_SNP` exists.
+Note: This has only been tested with the `DATA.SNP` file, the implementation for creating a archive requires more work.
+
+
+## Arrowgene.KrazyRain.GameServer
+Server emulator to answer the `Game.exe` network requests
+
+## Arrowgene.KrazyRain.PatchServer
+PatchServer emulator, to answer the `KRPATCHER.exe` http requests.
+
+## Arrowgene.KrazyRain.VirtualDisk
+Implementation of the `VDISK.DLL` methods, to pack and unpack `.SNP` files.
+
+## Arrowgene.KrazyRain.Dll
+c++ DLL that is registered in the import table of `Arrowgene.Game.exe`. The DLL is able to patch the game on the fly, to disable Hackschield, enable offline mode or log VDisk access.
