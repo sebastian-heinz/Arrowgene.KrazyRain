@@ -8,7 +8,7 @@ Research for reviving and server emulation of the game KrazyRain
 - [Game Assets](#game-assets)
 - [Executables](#executables)
   - [Game.exe](#gameexe)
-    - [Arguments](#arguments)
+  - [KRPATCHER.exe](#krpatcherexe)
 - [Project](#project)
   - [Arrowgene.KrazyRain.Cmd](#arrowgenekrazyraincmd)
   
@@ -30,7 +30,7 @@ https://github.com/sebastian-heinz/Arrowgene.KrazyRain/tree/master/Files
 
 # Game Assets
 Asset acces is managed by `VDISK.DLL`.
-The main assets are `*SNP` files which is a zip like archive format.
+The main assets are `*.SNP` files which is a zip like archive format.
 
 Header (24bytes)
 | bytes  | type   | description |
@@ -92,22 +92,63 @@ Game.exe fromlauncher test
 	xor eax, eax
 	ret
 ```
+
 ## KRPATCHER.exe
-```
-fromlauncher version #32770
-hiderun
-```
+Game Patcher that delivers updates.
+
+### DNS Lookups
+The patcher tries to connect to the following hosts:
 ```
 127.0.0.1 patch.krazyrain.com
 127.0.0.1 krazyrain.com
 127.0.0.1 launcher.krazyrain.com
 ```
+in order to redirect the requests, modify your `hosts` file accordingly.
 
+### Arguments
+```
+KRPATCHER.exe fromlauncher version #32770
+KRPATCHER.exe hiderun
+```
 
-Version:
+### HTTP Requests
+The Patcher will request various `.ini` files.   
+
+some of them contain the `FileVersion`:
 ```
 0x01020304 = 1.2.3.4
 ```
+
+#### LauncherVersion.ini
+Contains `FileVersion` of `KRAZYRAIN.EXE`
+```
+0x01000015
+```
+
+#### PatcherVersion.ini
+Contains `FileVersion` of `KRPATCHER.EXE`
+```
+0x1000109
+```
+
+#### LauncherCheck.ini
+Not sure what it contains yet
+```
+-0x1
+```
+
+#### ClientVersion.ini
+Contains a generic versioning of `Game.exe` in `x.x.x` format.
+```
+3.15.0
+```
+
+#### Launcher_check.snp
+HTML file to displat while checking
+
+#### Launcher.snp
+HTML file to displat after check completed
+
 
 # Project
 Summary of projects
