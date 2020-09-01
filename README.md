@@ -1,6 +1,13 @@
 Arrowgene.KrazyRain
 ===
 
+
+# Files
+The Files folder contains a collection of ready to use files.
+If you are here for a offline patch, you can just grab it from here:
+https://github.com/sebastian-heinz/Arrowgene.KrazyRain/tree/master/Files
+
+
 # Game Assets
 Asset acces is managed by `VDISK.DLL`.
 The main assets are `*SNP` files which is a zip like archive format.
